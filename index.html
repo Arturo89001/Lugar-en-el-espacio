@@ -36,9 +36,9 @@
                 <a href="#informacion">Información</a>
                 <div class="dropdown">
                     <div class="sub-header">Información</div>
-                    <a href="#informacion" onclick="navToInfo('centros')">Centros Espaciales</a>
-                    <a href="#informacion" onclick="navToInfo('tecnologia')">Tecnología</a>
-                    <a href="#informacion" onclick="navToInfo('historia')">Historia</a>
+                    <a href="#centros-espaciales">Centros Espaciales</a>
+                    <a href="#tecnologia">Tecnología</a>
+                    <a href="#historia">Historia</a>
                     <a href="#centros">Centro de Lanzamiento</a>
                 </div>
             </li>
@@ -46,9 +46,9 @@
                 <a href="#misiones">Misiones Espaciales</a>
                 <div class="dropdown">
                     <div class="sub-header">Misiones Espaciales</div>
-                    <a href="#misiones" onclick="navToMision('programas')">Programas Espaciales</a>
-                    <a href="#misiones" onclick="navToMision('destacadas')">Misiones Destacadas</a>
-                    <a href="#misiones" onclick="navToMision('lunar')">Exploración Lunar y Orbital</a>
+                    <a href="#tab-programas">Programas Espaciales</a>
+                    <a href="#tab-destacadas">Misiones Destacadas</a>
+                    <a href="#tab-lunar">Exploración Lunar y Orbital</a>
                 </div>
             </li>
             <li>
@@ -90,7 +90,7 @@
             <div class="orbit-dot red"></div>
         </div>
 
-        <div class="hero-badge">✦ ✦</div>
+        <div class="hero-badge">✦ Ken R. Harman — Explorador Espacial ✦</div>
 
         <div class="hero-title-row">
             <img src="images/Inicioastronauta.jpg" alt="Astronauta" class="hero-astronaut">
@@ -184,8 +184,7 @@
 
             <div class="info-filter reveal">
                 <button class="filter-btn" onclick="selectInfoSection('all', this)">Todos</button>
-                <button class="filter-btn active" onclick="selectInfoSection('centros', this)">Centros
-                    Espaciales</button>
+                <button class="filter-btn active" onclick="selectInfoSection('centros', this)">Centros Espaciales</button>
                 <button class="filter-btn" onclick="selectInfoSection('tecnologia', this)">Tecnología</button>
                 <button class="filter-btn" onclick="selectInfoSection('historia', this)">Historia</button>
             </div>
@@ -291,8 +290,7 @@
                                 <div class="tech-text">
                                     <h4>🚀 Cohetes</h4>
                                     <p>Los cohetes son utilizados para transportar satélites, astronautas y equipos al
-                                        espacio. Son uno de los elementos más importantes en la exploración espacial.
-                                    </p>
+                                        espacio. Son uno de los elementos más importantes en la exploración espacial.</p>
                                 </div>
                             </div>
                             <div class="tech-item">
@@ -308,8 +306,7 @@
                             </div>
                             <div class="tech-item">
                                 <div class="img-zoom-wrap" onclick="openInfoModal('estacion')">
-                                    <img src="images/estacion_espacial.jpg" alt="Estaciones espaciales"
-                                        class="tech-image">
+                                    <img src="images/estacion espacial.jpg" alt="Estaciones espaciales" class="tech-image">
                                     <span class="img-zoom-icon">🔍</span>
                                 </div>
                                 <div class="tech-text">
@@ -339,8 +336,7 @@
                         <span class="info-icon">📡</span>
                         <h3>Historia</h3>
                         <div class="img-zoom-wrap img-zoom-wrap--float" onclick="openInfoModal('historia')">
-                            <img src="images/Australias_First_Satellites_1.jpg" alt="Historia espacial"
-                                class="historia-image">
+                            <img src="images/Australia's First Satellites 1.jpg" alt="Historia espacial" class="historia-image">
                             <span class="img-zoom-icon">🔍</span>
                         </div>
                         <p>La exploración espacial comenzó a mediados del siglo XX durante la llamada carrera espacial
@@ -575,8 +571,7 @@
                         </div>
                     </div>
                     <div class="mission-visual">
-                        <div class="img-zoom-wrap img-zoom-wrap--mission"
-                            onclick="openInfoModal('misiones_destacadas')">
+                        <div class="img-zoom-wrap img-zoom-wrap--mission" onclick="openInfoModal('misiones_destacadas')">
                             <img src="images/capsulamercury.jpg" alt="Misiones Icónicas" class="mission-image">
                             <span class="img-zoom-icon">🔍</span>
                         </div>
@@ -621,7 +616,7 @@
                     </div>
                     <div class="mission-visual">
                         <div class="img-zoom-wrap img-zoom-wrap--mission" onclick="openInfoModal('lunar_orbital')">
-                            <img src="images/lunar_exploracion.jpg" alt="La Luna y más allá" class="mission-image">
+                            <img src="images/lunar exploracion.jpg" alt="La Luna y más allá" class="mission-image">
                             <span class="img-zoom-icon">🔍</span>
                         </div>
                         <h4>La Luna y más allá</h4>
@@ -658,7 +653,7 @@
                 <button class="gallery-arrow gallery-arrow-left" onclick="scrollGallery('left')">❮</button>
                 <div class="gallery-grid" id="galleryGrid">
                     <div class="gallery-item" data-cat="cohetes-vehiculos">
-                        <img src="images/The_Shrine.jpg" alt="The Shrine" class="gi-image">
+                        <img src="images/The Shrine.jpg" alt="The Shrine" class="gi-image">
                         <div class="gi-overlay">
                             <h5>The Shrine</h5>
                             <p>Ralph Aeschliman</p>
@@ -700,7 +695,7 @@
                         </div>
                     </div>
                     <div class="gallery-item" data-cat="cohetes-vehiculos">
-                        <img src="images/freedom7ii_model.jpg" alt="Freedom 7II" class="gi-image">
+                        <img src="images/freedom7ii model.jpg" alt="Freedom 7II" class="gi-image">
                         <div class="gi-overlay">
                             <h5>Freedom 7II</h5>
                             <p>Ralph Aeschliman</p>
@@ -764,7 +759,7 @@
                         </div>
                     </div>
                     <div class="gallery-item" data-cat="estaciones-satelites">
-                        <img src="images/Australias_First_Satellites_1.jpg" alt="Australia's First Satellites"
+                        <img src="images/Australia's First Satellites 1.jpg" alt="Australia's First Satellites"
                             class="gi-image">
                         <div class="gi-overlay">
                             <h5>Australia's First Satellites</h5>
@@ -786,7 +781,7 @@
                         </div>
                     </div>
                     <div class="gallery-item" data-cat="estaciones-satelites">
-                        <img src="images/estacion_espacial.jpg" alt="International Space Station" class="gi-image">
+                        <img src="images/estacion espacial.jpg" alt="International Space Station" class="gi-image">
                         <div class="gi-overlay">
                             <h5>International Space Station</h5>
                             <p>Ralph Aeschliman</p>
@@ -800,7 +795,7 @@
                         </div>
                     </div>
                     <div class="gallery-item" data-cat="estaciones-satelites">
-                        <img src="images/Salyut_1_with_Soyuz_11_model.jpg" alt="Salyut 1 with Soyuz 11"
+                        <img src="images/Salyut 1 with Soyuz 11 model.jpg" alt="Salyut 1 with Soyuz 11"
                             class="gi-image">
                         <div class="gi-overlay">
                             <h5>Salyut 1 with Soyuz 11</h5>
@@ -905,8 +900,7 @@
                             <span class="cl-icon">📧</span>
                             trabajosartu7@gmail.com
                         </a>
-                        <a href="https://arturo89001.github.io/Lugar-en-el-espacio/" class="contact-link"
-                            target="_blank">
+                        <a href="https://arturo89001.github.io/Lugar-en-el-espacio/" class="contact-link" target="_blank">
                             <span class="cl-icon">🌐</span>
                             https://arturo89001.github.io/Lugar-en-el-espacio/
                         </a>
@@ -914,7 +908,9 @@
                 </div>
 
                 <div class="reveal">
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xlgzzdkk" method="POST"
+                    <form class="contact-form" id="contactForm"
+                        action="https://formspree.io/f/xlgzzdkk"
+                        method="POST"
                         onsubmit="handleForm(event)">
                         <input type="hidden" name="_subject" value="Nuevo mensaje — Lugar en el Espacio">
                         <div class="form-group">
