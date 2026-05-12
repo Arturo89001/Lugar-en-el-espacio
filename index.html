@@ -36,9 +36,9 @@
                 <a href="#informacion">Información</a>
                 <div class="dropdown">
                     <div class="sub-header">Información</div>
-                    <a href="#centros-espaciales">Centros Espaciales</a>
-                    <a href="#tecnologia">Tecnología</a>
-                    <a href="#historia">Historia</a>
+                    <a href="#informacion" onclick="navToInfo('centros')">Centros Espaciales</a>
+                    <a href="#informacion" onclick="navToInfo('tecnologia')">Tecnología</a>
+                    <a href="#informacion" onclick="navToInfo('historia')">Historia</a>
                     <a href="#centros">Centro de Lanzamiento</a>
                 </div>
             </li>
@@ -46,9 +46,9 @@
                 <a href="#misiones">Misiones Espaciales</a>
                 <div class="dropdown">
                     <div class="sub-header">Misiones Espaciales</div>
-                    <a href="#tab-programas">Programas Espaciales</a>
-                    <a href="#tab-destacadas">Misiones Destacadas</a>
-                    <a href="#tab-lunar">Exploración Lunar y Orbital</a>
+                    <a href="#misiones" onclick="navToMision('programas')">Programas Espaciales</a>
+                    <a href="#misiones" onclick="navToMision('destacadas')">Misiones Destacadas</a>
+                    <a href="#misiones" onclick="navToMision('lunar')">Exploración Lunar y Orbital</a>
                 </div>
             </li>
             <li>
@@ -306,7 +306,7 @@
                             </div>
                             <div class="tech-item">
                                 <div class="img-zoom-wrap" onclick="openInfoModal('estacion')">
-                                    <img src="images/estacion espacial.jpg" alt="Estaciones espaciales" class="tech-image">
+                                    <img src="images/estacion_espacial.jpg" alt="Estaciones espaciales" class="tech-image">
                                     <span class="img-zoom-icon">🔍</span>
                                 </div>
                                 <div class="tech-text">
@@ -336,7 +336,7 @@
                         <span class="info-icon">📡</span>
                         <h3>Historia</h3>
                         <div class="img-zoom-wrap img-zoom-wrap--float" onclick="openInfoModal('historia')">
-                            <img src="images/Australia's First Satellites 1.jpg" alt="Historia espacial" class="historia-image">
+                            <img src="images/Australias_First_Satellites_1.jpg" alt="Historia espacial" class="historia-image">
                             <span class="img-zoom-icon">🔍</span>
                         </div>
                         <p>La exploración espacial comenzó a mediados del siglo XX durante la llamada carrera espacial
@@ -616,7 +616,7 @@
                     </div>
                     <div class="mission-visual">
                         <div class="img-zoom-wrap img-zoom-wrap--mission" onclick="openInfoModal('lunar_orbital')">
-                            <img src="images/lunar exploracion.jpg" alt="La Luna y más allá" class="mission-image">
+                            <img src="images/lunar_exploracion.jpg" alt="La Luna y más allá" class="mission-image">
                             <span class="img-zoom-icon">🔍</span>
                         </div>
                         <h4>La Luna y más allá</h4>
@@ -653,7 +653,7 @@
                 <button class="gallery-arrow gallery-arrow-left" onclick="scrollGallery('left')">❮</button>
                 <div class="gallery-grid" id="galleryGrid">
                     <div class="gallery-item" data-cat="cohetes-vehiculos">
-                        <img src="images/The Shrine.jpg" alt="The Shrine" class="gi-image">
+                        <img src="images/The_Shrine.jpg" alt="The Shrine" class="gi-image">
                         <div class="gi-overlay">
                             <h5>The Shrine</h5>
                             <p>Ralph Aeschliman</p>
@@ -695,7 +695,7 @@
                         </div>
                     </div>
                     <div class="gallery-item" data-cat="cohetes-vehiculos">
-                        <img src="images/freedom7ii model.jpg" alt="Freedom 7II" class="gi-image">
+                        <img src="images/freedom7ii_model.jpg" alt="Freedom 7II" class="gi-image">
                         <div class="gi-overlay">
                             <h5>Freedom 7II</h5>
                             <p>Ralph Aeschliman</p>
@@ -759,7 +759,7 @@
                         </div>
                     </div>
                     <div class="gallery-item" data-cat="estaciones-satelites">
-                        <img src="images/Australia's First Satellites 1.jpg" alt="Australia's First Satellites"
+                        <img src="images/Australias_First_Satellites_1.jpg" alt="Australia's First Satellites"
                             class="gi-image">
                         <div class="gi-overlay">
                             <h5>Australia's First Satellites</h5>
@@ -781,7 +781,7 @@
                         </div>
                     </div>
                     <div class="gallery-item" data-cat="estaciones-satelites">
-                        <img src="images/estacion espacial.jpg" alt="International Space Station" class="gi-image">
+                        <img src="images/estacion_espacial.jpg" alt="International Space Station" class="gi-image">
                         <div class="gi-overlay">
                             <h5>International Space Station</h5>
                             <p>Ralph Aeschliman</p>
@@ -795,7 +795,7 @@
                         </div>
                     </div>
                     <div class="gallery-item" data-cat="estaciones-satelites">
-                        <img src="images/Salyut 1 with Soyuz 11 model.jpg" alt="Salyut 1 with Soyuz 11"
+                        <img src="images/Salyut_1_with_Soyuz_11_model.jpg" alt="Salyut 1 with Soyuz 11"
                             class="gi-image">
                         <div class="gi-overlay">
                             <h5>Salyut 1 with Soyuz 11</h5>
