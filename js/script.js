@@ -442,24 +442,36 @@ const infoData = {
 window.openInfoModal = function(key) {
     const d = infoData[key];
     if (!d) return;
-    document.getElementById('im-hero-img').src      = d.hero;
-    document.getElementById('im-hero-img').alt      = d.title;
-    document.getElementById('im-tag').textContent   = d.tag;
-    document.getElementById('im-title').textContent = d.title;
-    document.getElementById('im-desc').textContent  = d.desc;
-    document.getElementById('im-facts').innerHTML = d.facts.map(f =>
-        `<div class="im-fact"><span class="im-fact-label">${f.label}</span><span class="im-fact-value">${f.value}</span></div>`
+
+    // Función auxiliar para escapar HTML y evitar truncación por caracteres especiales
+    function esc(str) {
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    document.getElementById('im-hero-img').src       = d.hero;
+    document.getElementById('im-hero-img').alt       = d.title;
+    document.getElementById('im-tag').innerHTML      = esc(d.tag);
+    document.getElementById('im-title').innerHTML    = esc(d.title);
+    document.getElementById('im-desc').innerHTML     = esc(d.desc);
+    document.getElementById('im-facts').innerHTML    = d.facts.map(f =>
+        `<div class="im-fact"><span class="im-fact-label">${esc(f.label)}</span><span class="im-fact-value">${esc(f.value)}</span></div>`
     ).join('');
+
     const galleryEl = document.getElementById('im-gallery');
     if (d.images && d.images.length > 1) {
         galleryEl.innerHTML     = d.images.map(src =>
-            `<img src="${src}" alt="" class="im-gal-img" onclick="this.classList.toggle('im-gal-zoom')">`
+            `<img src="${esc(src)}" alt="" class="im-gal-img" onclick="this.classList.toggle('im-gal-zoom')">`
         ).join('');
         galleryEl.style.display = 'grid';
     } else {
         galleryEl.innerHTML     = '';
         galleryEl.style.display = 'none';
     }
+
     document.getElementById('infoModal').classList.add('open');
     document.body.style.overflow = 'hidden';
 };
