@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lugar en el espacio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <canvas id="starfield"></canvas>
+    <div class="nebula-bg"></div>
+
+    <!-- ═══ NAVEGACIÓN ═══ -->
+    <nav id="navbar">
+        <a href="#inicio" class="nav-logo">
+            <span class="logo-icon">🚀</span>
+            LUGAR EN EL ESPACIO
+        </a>
+        <ul class="nav-menu">
+            <li>
+                <a href="#inicio" class="active">Inicio</a>
+                <div class="dropdown">
+                    <div class="sub-header">Inicio</div>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#intro">Introducción</a>
+                    <a href="#galeria-dest">Galería Destacada</a>
+                </div>
+            </li>
+            <li>
+                <a href="#informacion">Información</a>
+                <div class="dropdown">
+                    <div class="sub-header">Información</div>
+                    <a href="#centros-espaciales">Centros Espaciales</a>
+                    <a href="#tecnologia">Tecnología</a>
+                    <a href="#historia">Historia</a>
+                    <a href="#centros">Centro de Lanzamiento</a>
+                </div>
+            </li>
+            <li>
+                <a href="#misiones">Misiones Espaciales</a>
+                <div class="dropdown">
+                    <div class="sub-header">Misiones Espaciales</div>
+                    <a href="#tab-programas">Programas Espaciales</a>
+                    <a href="#tab-destacadas">Misiones Destacadas</a>
+                    <a href="#tab-lunar">Exploración Lunar y Orbital</a>
+                </div>
+            </li>
+            <li>
+                <a href="#galeria">Galería</a>
+                <div class="dropdown">
+                    <div class="sub-header">Galería</div>
+                    <a href="#galeria"
+                        onclick="filterGallery('cohetes-vehiculos', document.querySelector('[onclick*=\'cohetes-vehiculos\']'));">Cohetes
+                        y Vehículos Espaciales</a>
+                    <a href="#galeria"
+                        onclick="filterGallery('estaciones-satelites', document.querySelector('[onclick*=\'estaciones-satelites\']'));">Estaciones
+                        y Satélites</a>
+                    <a href="#galeria"
+                        onclick="filterGallery('misiones-eventos', document.querySelector('[onclick*=\'misiones-eventos\']'));">Misiones
+                        y Eventos Espaciales</a>
+                    <a href="#galeria"
+                        onclick="filterGallery('aviones-prototipos', document.querySelector('[onclick*=\'aviones-prototipos\']'));">Aviones
+                        y Prototipos</a>
+                </div>
+            </li>
+            <li>
+                <a href="#contacto">Contacto</a>
+                <div class="dropdown">
+                    <a href="#contacto">Correo</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- ═══ HERO / INICIO ═══ -->
+    <section id="inicio">
+        <div class="hero-orbit" style="top:50%;left:50%;transform:translate(-50%,-50%)">
+            <div class="orbit-dot"></div>
+        </div>
+        <div class="hero-orbit" style="top:50%;left:50%;transform:translate(-50%,-50%)">
+            <div class="orbit-dot gold"></div>
+        </div>
+        <div class="hero-orbit" style="top:50%;left:50%;transform:translate(-50%,-50%)">
+            <div class="orbit-dot red"></div>
+        </div>
+
+        <div class="hero-badge">✦ Ken R. Harman — Explorador Espacial ✦</div>
+
+        <div class="hero-title-row">
+            <img src="images/Inicioastronauta.jpg" alt="Astronauta" class="hero-astronaut">
+            <h1 class="hero-title">
+                Lugar En
+                <span>El Espacio</span>
+            </h1>
+        </div>
+
+        <p class="hero-sub" id="intro">
+            Bienvenido a este sitio web dedicado a la exploración espacial, donde podrás conocer las misiones más
+            importantes, los centros espaciales y los modelos que han marcado la historia del espacio. Navega por
+            nuestras secciones y descubre información de manera clara y organizada.
+        </p>
+
+        <div class="hero-cta">
+            <a href="#informacion" class="btn-primary">Explorar el Sitio</a>
+            <a href="#misiones" class="btn-secondary">Ver Misiones</a>
+        </div>
+
+        <blockquote class="hero-quote">
+            <em>"Los dinosaurios se extinguieron porque no tenían un programa espacial"</em> — Arthur C. Clarke
+        </blockquote>
+
+        <div class="scroll-indicator" style="bottom:30px">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+
+        <div class="intro-section reveal"
+            style="width:100%;max-width:1100px;margin-top:60px; padding:30px; border-radius:16px;">
+            <div class="section-tag">Introducción</div>
+            <h3 style="margin:16px 0 12px;color:var(--accent);text-align: justify;">Bienvenido a la exploración espacial
+            </h3>
+            <p style="font-size:0.95rem;line-height:1.9;color:rgba(232,240,255,0.9); text-align: justify    ;">
+                Este sitio web está dedicado a la exploración espacial y tiene como objetivo presentar información sobre
+                misiones, centros espaciales y modelos históricos. La página ha sido reorganizada para ofrecer una mejor
+                experiencia de navegación, permitiendo al usuario acceder fácilmente a la información mediante secciones
+                claras como Misiones, Galería e Información. De esta manera, el usuario podrá explorar el contenido de
+                forma sencilla, rápida y organizada.
+
+        </div>
+
+        <!-- Galería destacada del Inicio -->
+        <div id="galeria-dest" style="width:100%;max-width:1100px;margin-top:80px">
+            <div class="section-tag reveal">Galería Destacada</div>
+            <div class="featured-grid reveal">
+                <div class="featured-card" onclick="openLightbox(0)">
+                    <div class="card-zoom-hint">🔍</div>
+                    <img src="images/Baikonur.jpg" alt="Cosmódromo de Baikonur" class="card-img">
+                    <div class="card-body">
+                        <div class="card-label">Julio 1992</div>
+                        <div class="card-title">Cosmódromo de Baikonur</div>
+                        <p class="card-text">Primer viaje a las instalaciones soviéticas recién abiertas al mundo.
+                            Testigo del lanzamiento de Soyuz TM-15.</p>
+                    </div>
+                </div>
+                <div class="featured-card" onclick="openLightbox(1)">
+                    <div class="card-zoom-hint">🔍</div>
+                    <img src="images/edgarmitchell.jpg" alt="Visita del Dr. Edgar Mitchell" class="card-img">
+                    <div class="card-body">
+                        <div class="card-label">Junio 2006</div>
+                        <div class="card-title">Visita del Dr. Edgar Mitchell</div>
+                        <p class="card-text">El sexto hombre en caminar en la Luna visitó "el Santuario" — la colección
+                            personal de modelos espaciales.</p>
+                    </div>
+                </div>
+                <div class="featured-card" onclick="openLightbox(2)">
+                    <div class="card-zoom-hint">🔍</div>
+                    <img src="images/new_horizons_launch_1_sm.jpg" alt="Lanzamiento New Horizons" class="card-img">
+                    <div class="card-body">
+                        <div class="card-label">Enero 2006</div>
+                        <div class="card-title">Lanzamiento New Horizons</div>
+                        <p class="card-text">Los "Baikonour Boys" se reunieron para ver el Atlas V 500 llevar la sonda
+                            New Horizons hacia Plutón.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══ INFORMACIÓN ═══ -->
+    <section id="informacion">
+        <div class="section-inner">
+            <div class="section-tag reveal">Base de Conocimiento</div>
+            <h2 class="section-title reveal">Información <span>Espacial</span></h2>
+            <p class="section-lead reveal">Todo lo que necesitas saber sobre la historia, tecnología y los centros de
+                lanzamiento que han llevado a la humanidad más allá de nuestra atmósfera.</p>
+
+            <div class="info-filter reveal">
+                <button class="filter-btn" onclick="selectInfoSection('all', this)">Todos</button>
+                <button class="filter-btn active" onclick="selectInfoSection('centros', this)">Centros Espaciales</button>
+                <button class="filter-btn" onclick="selectInfoSection('tecnologia', this)">Tecnología</button>
+                <button class="filter-btn" onclick="selectInfoSection('historia', this)">Historia</button>
+            </div>
+
+            <div class="info-sections">
+                <div class="info-section reveal" data-info="centros" id="centros-espaciales">
+                    <div class="info-section-header">Centros Espaciales</div>
+                    <div class="info-card" id="centros-card">
+                        <span class="info-icon">🌍</span>
+                        <h3>Centros Espaciales</h3>
+                        <p>Los centros espaciales son instalaciones desde donde se realizan lanzamientos y pruebas de
+                            misiones espaciales. Estos lugares han sido fundamentales en la historia de la exploración
+                            espacial y han permitido el desarrollo de nuevas tecnologías.</p>
+                        <div class="centers-list">
+                            <div class="center-item">
+                                <div class="img-zoom-wrap" onclick="openInfoModal('baikonur')">
+                                    <img src="images/Baikonur.jpg" alt="Cosmódromo de Baikonur" class="center-image">
+                                    <span class="img-zoom-icon">🔍</span>
+                                </div>
+                                <div class="center-text">
+                                    <h4>Cosmódromo de Baikonur</h4>
+                                    <p>Ubicado en Kazajistán, el Cosmódromo de Baikonur es el centro espacial más
+                                        antiguo y uno de los más importantes del mundo. Desde este lugar se lanzó el
+                                        primer satélite artificial y el primer ser humano al espacio.</p>
+                                </div>
+                            </div>
+                            <div class="center-item">
+                                <div class="img-zoom-wrap" onclick="openInfoModal('kennedy')">
+                                    <img src="images/Kennedy.jpg" alt="Centro Espacial Kennedy" class="center-image">
+                                    <span class="img-zoom-icon">🔍</span>
+                                </div>
+                                <div class="center-text">
+                                    <h4>Centro Espacial Kennedy</h4>
+                                    <p>Ubicado en Florida, Estados Unidos, este centro espacial ha sido utilizado por la
+                                        NASA para misiones importantes como el programa Apolo y el lanzamiento del
+                                        transbordador espacial.</p>
+                                </div>
+                            </div>
+                            <div class="center-item">
+                                <div class="img-zoom-wrap" onclick="openInfoModal('kourou')">
+                                    <img src="images/kourou.jpg" alt="Kourou" class="center-image">
+                                    <span class="img-zoom-icon">🔍</span>
+                                </div>
+                                <div class="center-text">
+                                    <h4>Kourou</h4>
+                                    <p>Ubicado en la Guayana Francesa, este centro espacial es utilizado por la Agencia
+                                        Espacial Europea para lanzar satélites y misiones espaciales.</p>
+                                </div>
+                            </div>
+                            <div class="center-item">
+                                <div class="img-zoom-wrap" onclick="openInfoModal('vandenberg')">
+                                    <img src="images/Vandenberg.jpg" alt="Base Vandenberg" class="center-image">
+                                    <span class="img-zoom-icon">🔍</span>
+                                </div>
+                                <div class="center-text">
+                                    <h4>Base de la Fuerza Aérea Vandenberg</h4>
+                                    <p>Ubicada en California, Estados Unidos, esta base se utiliza para lanzar satélites
+                                        y misiones espaciales con órbitas polares.</p>
+                                </div>
+                            </div>
+                            <div class="center-item">
+                                <div class="img-zoom-wrap" onclick="openInfoModal('peenemunde')">
+                                    <img src="images/Peenemünde.jpg" alt="Peenemünde" class="center-image">
+                                    <span class="img-zoom-icon">🔍</span>
+                                </div>
+                                <div class="center-text">
+                                    <h4>Peenemünde</h4>
+                                    <p>Ubicado en Alemania, este sitio fue utilizado durante la Segunda Guerra Mundial
+                                        para el desarrollo de cohetes V-2.</p>
+                                </div>
+                            </div>
+                            <div class="center-item">
+                                <div class="img-zoom-wrap" onclick="openInfoModal('woomera')">
+                                    <img src="images/woomera.jpg" alt="Woomera" class="center-image">
+                                    <span class="img-zoom-icon">🔍</span>
+                                </div>
+                                <div class="center-text">
+                                    <h4>Woomera</h4>
+                                    <p>Ubicado en Australia, este centro ha sido utilizado para pruebas espaciales y
+                                        lanzamientos experimentales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section reveal" data-info="tecnologia">
+                    <div class="info-section-header">Tecnología</div>
+                    <div class="info-card" id="tecnologia">
+                        <span class="info-icon">⚙️</span>
+                        <h3>Tecnología</h3>
+                        <p>La tecnología espacial ha permitido el desarrollo de misiones y exploraciones fuera de la
+                            Tierra. A lo largo del tiempo, se han creado diferentes herramientas y vehículos que han
+                            facilitado la investigación del espacio, como cohetes, satélites, estaciones espaciales y
+                            trajes espaciales. Estos avances han sido fundamentales para mejorar el conocimiento del
+                            universo y desarrollar nuevas tecnologías.</p>
+                        <div class="tech-list">
+                            <div class="tech-item">
+                                <div class="img-zoom-wrap" onclick="openInfoModal('cohetes')">
+                                    <img src="images/cohetes.jpg" alt="Cohetes" class="tech-image">
+                                    <span class="img-zoom-icon">🔍</span>
+                                </div>
+                                <div class="tech-text">
+                                    <h4>🚀 Cohetes</h4>
+                                    <p>Los cohetes son utilizados para transportar satélites, astronautas y equipos al
+                                        espacio. Son uno de los elementos más importantes en la exploración espacial.</p>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <div class="img-zoom-wrap" onclick="openInfoModal('satelites')">
+                                    <img src="images/satelites.jpg" alt="Satélites" class="tech-image">
+                                    <span class="img-zoom-icon">🔍</span>
+                                </div>
+                                <div class="tech-text">
+                                    <h4>🛰️ Satélites</h4>
+                                    <p>Los satélites se utilizan para comunicación, navegación, investigación y
+                                        observación de la Tierra.</p>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <div class="img-zoom-wrap" onclick="openInfoModal('estacion')">
+                                    <img src="images/estacion espacial.jpg" alt="Estaciones espaciales" class="tech-image">
+                                    <span class="img-zoom-icon">🔍</span>
+                                </div>
+                                <div class="tech-text">
+                                    <h4>🛰️ Estaciones espaciales</h4>
+                                    <p>Las estaciones espaciales permiten a los astronautas vivir y trabajar en el
+                                        espacio durante largos periodos de tiempo.</p>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <div class="img-zoom-wrap" onclick="openInfoModal('traje')">
+                                    <img src="images/traje.jpg" alt="Trajes espaciales" class="tech-image">
+                                    <span class="img-zoom-icon">🔍</span>
+                                </div>
+                                <div class="tech-text">
+                                    <h4>👨‍🚀 Trajes espaciales</h4>
+                                    <p>Los trajes espaciales protegen a los astronautas y les permiten realizar
+                                        actividades fuera de la nave.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section reveal" data-info="historia">
+                    <div class="info-section-header">Historia</div>
+                    <div class="info-card" id="historia">
+                        <span class="info-icon">📡</span>
+                        <h3>Historia</h3>
+                        <div class="img-zoom-wrap img-zoom-wrap--float" onclick="openInfoModal('historia')">
+                            <img src="images/Australia's First Satellites 1.jpg" alt="Historia espacial" class="historia-image">
+                            <span class="img-zoom-icon">🔍</span>
+                        </div>
+                        <p>La exploración espacial comenzó a mediados del siglo XX durante la llamada carrera espacial
+                            entre Estados Unidos y la Unión Soviética. En 1957, la Unión Soviética lanzó el Sputnik 1,
+                            el primer satélite artificial de la historia, marcando el inicio de la era espacial.
+                            Posteriormente, en 1961, Yuri Gagarin se convirtió en el primer ser humano en viajar al
+                            espacio.</p>
+                        <p>A lo largo de los años, la exploración espacial continuó avanzando con misiones importantes
+                            como el programa Apolo, que permitió al ser humano llegar a la Luna en 1969. Desde entonces,
+                            diferentes países han desarrollado nuevas tecnologías y estaciones espaciales como la
+                            Estación Espacial Internacional, que permite la investigación científica fuera de la Tierra.
+                        </p>
+                        <p>Actualmente, la exploración espacial continúa evolucionando con nuevas misiones hacia Marte,
+                            satélites más avanzados y proyectos para el futuro de la humanidad en el espacio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══ CENTROS ESPACIALES (detalle) ═══ -->
+    <section id="centros">
+        <div class="section-inner">
+            <div class="section-tag reveal">Expediciones Personales</div>
+            <h2 class="section-title reveal">Centro de <span>Lanzamiento</span></h2>
+            <p class="section-lead reveal">Los centros de lanzamiento son instalaciones utilizadas para enviar cohetes y
+                misiones al espacio. Estos lugares han sido fundamentales en el desarrollo de la exploración espacial y
+                continúan siendo utilizados para misiones científicas y tecnológicas.</p>
+
+            <div class="centres-list">
+                <div class="centre-item reveal">
+                    <div class="centre-num">01</div>
+                    <div class="img-zoom-wrap img-zoom-wrap--centre" onclick="openInfoModal('baikonur')">
+                        <img src="images/Baikonur.jpg" alt="Baikonur" class="centre-thumb">
+                        <span class="img-zoom-icon">🔍</span>
+                    </div>
+                    <div class="centre-info">
+                        <h4>Cosmódromo de Baikonur</h4>
+                        <div class="loc">📍 Kazajistán — 1955</div>
+                        <p>El Cosmódromo de Baikonur, ubicado en Kazajistán, es el centro de lanzamiento más antiguo del
+                            mundo. Desde este lugar se lanzó el primer satélite artificial en 1957 y el primer ser
+                            humano al espacio en 1961. Actualmente sigue siendo utilizado para misiones espaciales.</p>
+                    </div>
+                </div>
+                <div class="centre-item reveal">
+                    <div class="centre-num">02</div>
+                    <div class="img-zoom-wrap img-zoom-wrap--centre" onclick="openInfoModal('kennedy')">
+                        <img src="images/Kennedy.jpg" alt="Kennedy" class="centre-thumb">
+                        <span class="img-zoom-icon">🔍</span>
+                    </div>
+                    <div class="centre-info">
+                        <h4>Centro Espacial Kennedy</h4>
+                        <div class="loc">📍 Florida, EUA — 1962</div>
+                        <p>Ubicado en Florida, el Centro Espacial Kennedy ha sido utilizado por la NASA para importantes
+                            misiones espaciales, incluyendo el programa Apolo y el lanzamiento de transbordadores
+                            espaciales.</p>
+                    </div>
+                </div>
+                <div class="centre-item reveal">
+                    <div class="centre-num">03</div>
+                    <div class="img-zoom-wrap img-zoom-wrap--centre" onclick="openInfoModal('kourou')">
+                        <img src="images/kourou.jpg" alt="Kourou" class="centre-thumb">
+                        <span class="img-zoom-icon">🔍</span>
+                    </div>
+                    <div class="centre-info">
+                        <h4>Centro Espacial de Kourou</h4>
+                        <div class="loc">📍 Guayana Francesa — 1968</div>
+                        <p>Ubicado en la Guayana Francesa, este centro es utilizado por la Agencia Espacial Europea para
+                            lanzar satélites y misiones espaciales.</p>
+                    </div>
+                </div>
+                <div class="centre-item reveal">
+                    <div class="centre-num">04</div>
+                    <div class="img-zoom-wrap img-zoom-wrap--centre" onclick="openInfoModal('vandenberg')">
+                        <img src="images/Vandenberg.jpg" alt="Vandenberg" class="centre-thumb">
+                        <span class="img-zoom-icon">🔍</span>
+                    </div>
+                    <div class="centre-info">
+                        <h4>Base de la Fuerza Aérea Vandenberg</h4>
+                        <div class="loc">📍 California, EUA — 1957</div>
+                        <p>Ubicada en California, esta base se utiliza para lanzar satélites y misiones espaciales,
+                            principalmente hacia órbitas polares.</p>
+                    </div>
+                </div>
+                <div class="centre-item reveal">
+                    <div class="centre-num">05</div>
+                    <div class="img-zoom-wrap img-zoom-wrap--centre" onclick="openInfoModal('peenemunde')">
+                        <img src="images/Peenemünde.jpg" alt="Peenemünde" class="centre-thumb">
+                        <span class="img-zoom-icon">🔍</span>
+                    </div>
+                    <div class="centre-info">
+                        <h4>Peenemünde</h4>
+                        <div class="loc">📍 Alemania — 1937</div>
+                        <p>Ubicado en Alemania, este sitio fue utilizado para el desarrollo de los primeros cohetes V-2
+                            durante la Segunda Guerra Mundial, marcando el inicio de la tecnología espacial moderna.</p>
+                    </div>
+                </div>
+                <div class="centre-item reveal">
+                    <div class="centre-num">06</div>
+                    <div class="img-zoom-wrap img-zoom-wrap--centre" onclick="openInfoModal('woomera')">
+                        <img src="images/woomera.jpg" alt="Woomera" class="centre-thumb">
+                        <span class="img-zoom-icon">🔍</span>
+                    </div>
+                    <div class="centre-info">
+                        <h4>Woomera</h4>
+                        <div class="loc">📍 Australia — 1947</div>
+                        <p>Ubicado en Australia, este centro ha sido utilizado para pruebas de cohetes y lanzamientos
+                            experimentales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══ MISIONES ESPACIALES ═══ -->
+    <section id="misiones">
+        <div class="section-inner">
+            <div class="section-tag reveal">Exploración</div>
+            <h2 class="section-title reveal">Misiones <span>Espaciales</span></h2>
+            <p class="section-lead reveal">Los programas y misiones que marcaron la historia de la humanidad en el
+                espacio.</p>
+
+            <div class="missions-tabs reveal">
+                <button class="tab-btn active" onclick="showTab('all', this)">Todos</button>
+                <button class="tab-btn" onclick="showTab('programas', this)" id="programas-btn">Programas
+                    Espaciales</button>
+                <button class="tab-btn" onclick="showTab('destacadas', this)" id="destacadas-btn">Misiones
+                    Destacadas</button>
+                <button class="tab-btn" onclick="showTab('lunar', this)" id="lunar-btn">Exploración Lunar y
+                    Orbital</button>
+            </div>
+
+            <!-- Tab: Programas -->
+            <div class="tab-content active" id="tab-programas" id="programas">
+                <div class="mission-layout">
+                    <div class="mission-text">
+                        <h3>Programas Espaciales</h3>
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Skylab</h4>
+                            <p>Skylab fue la primera estación espacial de Estados Unidos, lanzada en 1973. Permitió
+                                realizar investigaciones científicas sobre el comportamiento humano en el espacio,
+                                observación solar y experimentos tecnológicos. Los astronautas permanecieron durante
+                                largos periodos en órbita, lo que ayudó a mejorar futuras misiones espaciales.</p>
+                        </div>
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Estación Espacial Internacional</h4>
+                            <p>La Estación Espacial Internacional es un proyecto conjunto entre varios países que
+                                permite a los astronautas vivir y trabajar en el espacio. Se utiliza para realizar
+                                experimentos científicos, observaciones de la Tierra y desarrollo tecnológico.</p>
+                        </div>
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Salyut 1</h4>
+                            <p>Salyut 1 fue la primera estación espacial lanzada por la Unión Soviética en 1971. Fue
+                                utilizada para realizar experimentos científicos y estudiar la permanencia del ser
+                                humano en el espacio.</p>
+                        </div>
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Salyut 7</h4>
+                            <p>Salyut 7 fue una estación espacial soviética utilizada para investigaciones científicas y
+                                misiones tripuladas. Fue una de las últimas estaciones del programa Salyut antes del
+                                desarrollo de nuevas estaciones espaciales.</p>
+                        </div>
+                        <div class="mission-meta">
+                            <span class="meta-tag">Skylab 1973</span>
+                            <span class="meta-tag">ISS 1998–Presente</span>
+                            <span class="meta-tag">Salyut 1 1971</span>
+                            <span class="meta-tag">Salyut 7 1982</span>
+                        </div>
+                    </div>
+                    <div class="mission-visual">
+                        <div class="img-zoom-wrap img-zoom-wrap--mission" onclick="openInfoModal('estacion')">
+                            <img src="images/astronautas.jpg" alt="Estaciones Espaciales" class="mission-image">
+                            <span class="img-zoom-icon">🔍</span>
+                        </div>
+                        <h4>Estaciones Espaciales</h4>
+                        <p>Astronautas trabajando en el interior</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content active" id="tab-destacadas" id="destacadas">
+                <div class="mission-layout">
+                    <div class="mission-text">
+                        <h3>Misiones Destacadas</h3>
+
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Soyuz 4 y Soyuz 5</h4>
+                            <p>Estas misiones lograron uno de los primeros acoplamientos entre naves espaciales en
+                                órbita, marcando un avance importante en la exploración espacial.</p>
+                        </div>
+
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Apollo 15</h4>
+                            <p>Apollo 15 permitió a los astronautas explorar la superficie lunar utilizando un vehículo
+                                rover, realizando importantes experimentos científicos.</p>
+                        </div>
+
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Perseverance </h4>
+                            <p>El rover Perseverance de la NASA explora Marte en busca de signos de vida pasada y
+                                recolecta muestras que podrían ser traídas a la Tierra en futuras misiones.</p>
+                        </div>
+
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">JUICE </h4>
+                            <p>La misión JUICE de la Agencia Espacial Europea estudia las lunas heladas de Júpiter para
+                                analizar su potencial de habitabilidad.</p>
+                        </div>
+
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Starship </h4>
+                            <p>Starship es el sistema de lanzamiento reutilizable desarrollado por SpaceX, diseñado para
+                                misiones a la Luna y Marte, reduciendo costos de acceso al espacio.</p>
+                        </div>
+
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Artemis II </h4>
+                            <p>Artemis II será una misión tripulada que llevará astronautas alrededor de la Luna,
+                                preparando el regreso humano al satélite natural tras décadas.</p>
+                        </div>
+
+                        <div class="mission-meta">
+                            <span class="meta-tag">Soyuz 4/5 1969</span>
+                            <span class="meta-tag">Apollo 15 1971</span>
+                            <span class="meta-tag">Perseverance 2020–Actual</span>
+                            <span class="meta-tag">JUICE 2023</span>
+                            <span class="meta-tag">Starship 2023–Actual</span>
+                            <span class="meta-tag">Artemis II 2025</span>
+                        </div>
+                    </div>
+                    <div class="mission-visual">
+                        <div class="img-zoom-wrap img-zoom-wrap--mission" onclick="openInfoModal('misiones_destacadas')">
+                            <img src="images/capsulamercury.jpg" alt="Misiones Icónicas" class="mission-image">
+                            <span class="img-zoom-icon">🔍</span>
+                        </div>
+                        <h4>Misiones Icónicas</h4>
+                        <p>Rover lunar<br>Astronautas en la Luna<br>Cápsula Mercury</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Lunar y Orbital -->
+            <div class="tab-content active" id="tab-lunar" id="lunar">
+                <div class="mission-layout">
+                    <div class="mission-text">
+                        <h3>Exploración Lunar y Orbital</h3>
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Apollo 15 Trans-Earth EVA</h4>
+                            <p>Durante el regreso de la misión Apollo 15, los astronautas realizaron una actividad
+                                extravehicular en el espacio para recuperar material científico.</p>
+                        </div>
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Soviet Lunar Landing LOK & LK</h4>
+                            <p>Este fue un proyecto soviético para llevar astronautas a la Luna. Incluía un módulo
+                                orbital y un módulo de aterrizaje lunar.</p>
+                        </div>
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Soyuz Docking</h4>
+                            <p>El acoplamiento entre naves Soyuz permitió mejorar la tecnología de encuentros orbitales
+                                y misiones tripuladas.</p>
+                        </div>
+                        <div class="mission-item">
+                            <h4 style="color:var(--accent)">Mars Base Camp</h4>
+                            <p>Mars Base Camp es un concepto de misión futura para explorar Marte. La idea consiste en
+                                establecer una estación en órbita del planeta para estudiar su superficie y preparar
+                                futuras misiones humanas.</p>
+                        </div>
+                        <div class="mission-meta">
+                            <span class="meta-tag">Apollo 15 EVA 1971</span>
+                            <span class="meta-tag">Soviet LOK & LK 1960s</span>
+                            <span class="meta-tag">Soyuz Docking 1969</span>
+                            <span class="meta-tag">Mars Base Camp Futuro</span>
+                        </div>
+                    </div>
+                    <div class="mission-visual">
+                        <div class="img-zoom-wrap img-zoom-wrap--mission" onclick="openInfoModal('lunar_orbital')">
+                            <img src="images/lunar exploracion.jpg" alt="La Luna y más allá" class="mission-image">
+                            <span class="img-zoom-icon">🔍</span>
+                        </div>
+                        <h4>La Luna y más allá</h4>
+                        <p>Exploración lunar y orbital<br>preparando misiones a Marte</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══ GALERÍA ═══ -->
+    <section id="galeria">
+        <div class="section-inner">
+            <div class="section-tag reveal">Archivo Visual</div>
+            <h2 class="section-title reveal">Galería <span>Espacial</span></h2>
+            <p class="section-lead reveal">Modelos construidos durante casi 60 años y fotografías de visitas a
+                instalaciones espaciales alrededor del mundo.</p>
+
+            <div class="gallery-filter reveal">
+                <button class="filter-btn active" onclick="filterGallery('all', this)">Todo</button>
+                <button class="filter-btn" onclick="filterGallery('cohetes-vehiculos', this)">Cohetes y Vehículos
+                    Espaciales</button>
+                <button class="filter-btn" onclick="filterGallery('estaciones-satelites', this)">Estaciones y
+                    Satélites</button>
+                <button class="filter-btn" onclick="filterGallery('misiones-eventos', this)">Misiones y Eventos
+                    Espaciales</button>
+                <button class="filter-btn" onclick="filterGallery('aviones-prototipos', this)">Aviones y
+                    Prototipos</button>
+            </div>
+
+            <div class="gallery-container reveal">
+                <button class="gallery-arrow gallery-arrow-left" onclick="scrollGallery('left')">❮</button>
+                <div class="gallery-grid" id="galleryGrid">
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/The Shrine.jpg" alt="The Shrine" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>The Shrine</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/v-2.jpg" alt="V-2 (A-4)" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>V-2 (A-4)</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/sputnik2.jpg" alt="Sputnik 2" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Sputnik 2</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/soyuz_t_launcher.jpg" alt="Soyuz T & Soyuz TM-15" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Soyuz T & Soyuz TM-15</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/mercury-atlas.jpg" alt="Mercury-Atlas" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Mercury-Atlas</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/vostok.jpg" alt="Vostok" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Vostok</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/freedom7ii model.jpg" alt="Freedom 7II" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Freedom 7II</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/voskhod2_model.jpg" alt="Voskhod 2" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Voskhod 2</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/gemini-titan-ii.jpg" alt="Gemini-Titan II" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Gemini-Titan II</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/gemini-agena.jpg" alt="Gemini-Agena 11 & 9" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Gemini-Agena 11 & 9</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/saturn-i-block-2.jpg" alt="Saturn I Block 2" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Saturn I Block 2</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/saturn-c8-nova.jpg" alt="Saturn C-8 NOVA" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Saturn C-8 "NOVA"</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/proton-mir.jpg" alt="Proton-Mir" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Proton-Mir</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="cohetes-vehiculos">
+                        <img src="images/n-1.jpg" alt="N-1" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>N-1</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-cat="estaciones-satelites">
+                        <img src="images/skylab.jpg" alt="Skylab" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Skylab</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="estaciones-satelites">
+                        <img src="images/Australia's First Satellites 1.jpg" alt="Australia's First Satellites"
+                            class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Australia's First Satellites</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="estaciones-satelites">
+                        <img src="images/hubble.jpg" alt="Hubble Space Telescope" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Hubble Space Telescope</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="estaciones-satelites">
+                        <img src="images/salyut-7.jpg" alt="Salyut 7" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Salyut 7</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="estaciones-satelites">
+                        <img src="images/estacion espacial.jpg" alt="International Space Station" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>International Space Station</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="estaciones-satelites">
+                        <img src="images/buran-mir.jpg" alt="Buran docked to Mir" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Buran docked to Mir</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="estaciones-satelites">
+                        <img src="images/Salyut 1 with Soyuz 11 model.jpg" alt="Salyut 1 with Soyuz 11"
+                            class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Salyut 1 with Soyuz 11</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-cat="misiones-eventos">
+                        <img src="images/apollo-15-eva.jpg" alt="Apollo 15 EVA" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Apollo 15 EVA</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="misiones-eventos">
+                        <img src="images/soyuz-4-5-docking.jpg" alt="Soyuz 4 & 5 Docking" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Soyuz 4 & 5 Docking</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="misiones-eventos">
+                        <img src="images/soviet-lunar-landing.jpg" alt="Soviet Lunar Landing" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Soviet Lunar Landing</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="misiones-eventos">
+                        <img src="images/mars-base-camp.jpg" alt="Mars Base Camp" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Mars Base Camp</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                    <!-- NUEVAS MISIONES MODERNAS -->
+
+                    <div class="gallery-item" data-cat="misiones-eventos">
+                        <img src="images/artemis2.jpg" alt="Artemis II" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Artemis II</h5>
+                            <p>Misión lunar tripulada</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-cat="misiones-eventos">
+                        <img src="images/starship.jpg" alt="Starship SpaceX" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Starship</h5>
+                            <p>SpaceX - Sistema reutilizable</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-cat="misiones-eventos">
+                        <img src="images/juice.jpg" alt="Misión JUICE" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>JUICE</h5>
+                            <p>Exploración de Júpiter</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-cat="misiones-eventos">
+                        <img src="images/perseverance.jpg" alt="Rover Perseverance" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>Perseverance</h5>
+                            <p>Exploración en Marte</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-cat="aviones-prototipos">
+                        <img src="images/xb-70-x-15.jpg" alt="XB-70 & Delta Wing X-15" class="gi-image">
+                        <div class="gi-overlay">
+                            <h5>XB-70 & Delta Wing X-15</h5>
+                            <p>Ralph Aeschliman</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="gallery-arrow gallery-arrow-right" onclick="scrollGallery('right')">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══ CONTACTO ═══ -->
+    <section id="contacto">
+        <div class="section-inner">
+            <div class="section-tag reveal">Comunicación</div>
+            <h2 class="section-title reveal">Contacto <span>& Correo</span></h2>
+
+            <div class="contact-layout">
+                <div class="contact-info reveal">
+                    <p>¿Preguntas sobre las visitas a centros espaciales, los modelos o la historia de la exploración
+                        espacial? Las preguntas y comentarios son siempre bienvenidos.</p>
+                    <p
+                        style="font-family:'Space Mono',monospace;font-size:0.75rem;color:rgba(79,195,247,0.6);line-height:1.8">
+                        — Arturo, David, Mario<br>
+                        Monterrey, México<br>
+                        Última actualización: Abril 2026
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:arturo.chavezg@uanl.edu.mx" class="contact-link">
+                            <span class="cl-icon">📧</span>
+                            arturo.chavezg@uanl.edu.mx
+                        </a>
+                        <a href="https://www.spaceistheplace.ca" class="contact-link" target="_blank">
+                            <span class="cl-icon">🌐</span>
+                            www.spaceistheplace.ca
+                        </a>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <form class="contact-form" id="contactForm"
+                        action="https://formspree.io/f/mpqbkzvd"
+                        method="POST"
+                        onsubmit="handleForm(event)">
+                        <input type="hidden" name="_subject" value="Nuevo mensaje — Lugar en el Espacio">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Correo Electrónico</label>
+                            <input type="email" name="email" placeholder="tu@correo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Asunto</label>
+                            <input type="text" name="asunto" placeholder="¿De qué trata tu mensaje?" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mensaje</label>
+                            <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" id="submitBtn" style="align-self:flex-start">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+        <div class="footer-logo">🚀 LUGAR EN EL ESPACIO</div>
+        <p class="footer-text">
+            © Arturo, David, Mario · Monterrey, México<br>
+            Sitio personal sobre exploración espacial — visitas a centros de lanzamiento y modelos históricos
+        </p>
+    </footer>
+
+    <!-- ═══ INFO MODAL ═══ -->
+    <div id="infoModal" class="info-modal">
+        <div class="info-modal-inner">
+            <button class="info-modal-close" onclick="closeInfoModal()">&times;</button>
+            <div class="im-hero">
+                <img id="im-hero-img" src="" alt="" class="im-hero-img">
+                <div class="im-hero-overlay">
+                    <div id="im-tag" class="im-tag"></div>
+                    <h2 id="im-title" class="im-title"></h2>
+                </div>
+            </div>
+            <div class="im-body">
+                <p id="im-desc" class="im-desc"></p>
+                <div id="im-facts" class="im-facts"></div>
+                <div id="im-gallery" class="im-gallery"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ LIGHTBOX ═══ -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-prev" onclick="lightboxNav(-1, event)">&#10094;</button>
+        <button class="lightbox-next" onclick="lightboxNav(1, event)">&#10095;</button>
+        <div class="lightbox-inner">
+            <img id="lightbox-img" src="" alt="">
+            <div class="lightbox-caption">
+                <div id="lightbox-label" class="lightbox-label"></div>
+                <div id="lightbox-title" class="lightbox-title"></div>
+                <p id="lightbox-text" class="lightbox-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ THEME TOGGLE ═══ -->
+    <button class="theme-toggle" id="themeToggle" title="Cambiar modo">🌙</button>
+
+    <script src="js/script.js"></script>
+
+    <!-- LIGHTBOX INLINE — independiente del script externo -->
+    <script>
+        const _lbData = [
+            {
+                src: 'images/Baikonur.jpg',
+                label: 'Julio 1992',
+                title: 'Cosmódromo de Baikonur',
+                text: 'Primer viaje a las instalaciones soviéticas recién abiertas al mundo. Testigo del lanzamiento de Soyuz TM-15.'
+            },
+            {
+                src: 'images/edgarmitchell.jpg',
+                label: 'Junio 2006',
+                title: 'Visita del Dr. Edgar Mitchell',
+                text: 'El sexto hombre en caminar en la Luna visitó "el Santuario" — la colección personal de modelos espaciales.'
+            },
+            {
+                src: 'images/new_horizons_launch_1_sm.jpg',
+                label: 'Enero 2006',
+                title: 'Lanzamiento New Horizons',
+                text: 'Los "Baikonour Boys" se reunieron para ver el Atlas V 500 llevar la sonda New Horizons hacia Plutón.'
+            }
+        ];
+
+        var _lbIndex = 0;
+
+        function openLightbox(index) {
+            _lbIndex = index;
+            var d = _lbData[index];
+            document.getElementById('lightbox-img').src   = d.src;
+            document.getElementById('lightbox-img').alt   = d.title;
+            document.getElementById('lightbox-label').textContent = d.label;
+            document.getElementById('lightbox-title').textContent = d.title;
+            document.getElementById('lightbox-text').textContent  = d.text;
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function lightboxNav(dir, e) {
+            if (e) e.stopPropagation();
+            _lbIndex = (_lbIndex + dir + _lbData.length) % _lbData.length;
+            var d   = _lbData[_lbIndex];
+            var img = document.getElementById('lightbox-img');
+            img.style.opacity = '0';
+            setTimeout(function() {
+                img.src = d.src;
+                img.alt = d.title;
+                img.style.opacity = '1';
+            }, 150);
+            document.getElementById('lightbox-label').textContent = d.label;
+            document.getElementById('lightbox-title').textContent = d.title;
+            document.getElementById('lightbox-text').textContent  = d.text;
+        }
+
+        // Cerrar al hacer clic en el fondo oscuro
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        // Teclado
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('lightbox').classList.contains('open')) return;
+            if (e.key === 'Escape')     closeLightbox();
+            if (e.key === 'ArrowRight') lightboxNav(1);
+            if (e.key === 'ArrowLeft')  lightboxNav(-1);
+        });
+    </script>
+</body>
+
+</html>
