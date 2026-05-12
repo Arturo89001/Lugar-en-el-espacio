@@ -893,7 +893,7 @@
                         style="font-family:'Space Mono',monospace;font-size:0.75rem;color:rgba(79,195,247,0.6);line-height:1.8">
                         — Arturo, David, Mario<br>
                         Monterrey, México<br>
-                        Última actualización: Abril 2026
+                        Última actualización: Mayo 2026
                     </p>
                     <div class="contact-links">
                         <a href="mailto:trabajosartu7@gmail.com" class="contact-link">
@@ -1009,33 +1009,27 @@
             }
         ];
 
-        function openLightbox(index) {
-            const lb = document.getElementById('lightbox');
-            const data = _lbData[index];
+        function openLightbox(idx) {
+            const data = _lbData[idx];
             document.getElementById('lightbox-img').src = data.src;
-            document.getElementById('lightbox-label').textContent = data.label;
-            document.getElementById('lightbox-title').textContent = data.title;
-            document.getElementById('lightbox-text').textContent = data.text;
-            lb.style.display = 'flex';
+            document.getElementById('lightbox-label').innerText = data.label;
+            document.getElementById('lightbox-title').innerText = data.title;
+            document.getElementById('lightbox-text').innerText = data.text;
+            document.getElementById('lightbox').style.display = 'flex';
         }
 
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
 
-        function lightboxNav(dir, e) {
+        function lightboxNav(direction, e) {
             e.stopPropagation();
-            const img = document.getElementById('lightbox-img').src;
-            const currentIndex = _lbData.findIndex(d => d.src === img);
-            let newIndex = currentIndex + dir;
-            if (newIndex < 0) newIndex = _lbData.length - 1;
-            if (newIndex >= _lbData.length) newIndex = 0;
-            openLightbox(newIndex);
+            const current = _lbData.findIndex(d => d.src === document.getElementById('lightbox-img').src);
+            const next = (current + direction + _lbData.length) % _lbData.length;
+            openLightbox(next);
         }
-
-        document.getElementById('lightbox').addEventListener('click', closeLightbox);
-        document.querySelector('.lightbox-inner').addEventListener('click', e => e.stopPropagation());
     </script>
+
 </body>
 
 </html>
