@@ -281,7 +281,7 @@ const infoData = {
         tag:  'Kazajistán · 1955',
         title: 'Cosmódromo de Baikonur',
         hero:  'images/Baikonur.jpg',
-        desc:  'El Cosmódromo de Baikonur, ubicado en las estepas de Kazajistán, es el centro de lanzamiento espacial más antiguo y más grande del mundo. Construido por la Unión Soviética en 1955, desde aquí se lanzó el Sputnik 1 en 1957 y en 1961 partió Yuri Gagarin en el Vostok 1. Ken Harman visitó estas instalaciones en julio de 1992, siendo testigo del lanzamiento de la Soyuz TM-15.',
+        desc:  'El Cosmódromo de Baikonur, ubicado en las estepas de Kazajistán, es el centro de lanzamiento espacial más antiguo y más grande del mundo. Construido por la Unión Soviética e[...]',
         facts: [
             { label: 'Fundado',                    value: '1955' },
             { label: 'País',                       value: 'Kazajistán (arrendado por Rusia)' },
@@ -295,7 +295,7 @@ const infoData = {
         tag:  'Florida, EUA · 1962',
         title: 'Centro Espacial Kennedy',
         hero:  'images/Kennedy.jpg',
-        desc:  'El Centro Espacial John F. Kennedy (KSC) es la principal instalación de lanzamiento de la NASA, situado en la Isla Merritt, Florida. Desde aquí se ejecutaron todas las misiones tripuladas del programa Apolo, los vuelos del Transbordador Espacial y los lanzamientos del cohete SLS del programa Artemis.',
+        desc:  'El Centro Espacial John F. Kennedy (KSC) es la principal instalación de lanzamiento de la NASA, situado en la Isla Merritt, Florida. Desde aquí se ejecutaron todas las misiones [...]',
         facts: [
             { label: 'Fundado',             value: '1962' },
             { label: 'País',               value: 'Estados Unidos' },
@@ -308,8 +308,8 @@ const infoData = {
     kourou: {
         tag:  'Guayana Francesa · 1968',
         title: 'Centro Espacial de Kourou',
-        hero:  'images/kourou.jpg',
-        desc:  'El Centro Espacial de Kourou, conocido como Puerto Espacial Europeo, es operado por la ESA y el CNES francés. Su ubicación a 5° al norte del ecuador le otorga una ventaja gravitacional excepcional para lanzar satélites geoestacionarios.',
+        hero:  'images/Kourou.jpg',
+        desc:  'El Centro Espacial de Kourou, conocido como Puerto Espacial Europeo, es operado por la ESA y el CNES francés. Su ubicación a 5° al norte del ecuador le otorga una ventaja gravi[...]',
         facts: [
             { label: 'Fundado',              value: '1968' },
             { label: 'País',                value: 'Guayana Francesa (Francia / ESA)' },
@@ -317,13 +317,13 @@ const infoData = {
             { label: 'Cohetes principales', value: 'Ariane 5, Ariane 6, Vega' },
             { label: 'Lanzamientos totales', value: '300+' },
         ],
-        images: ['images/kourou.jpg', 'images/satelites.jpg']
+        images: ['images/Kourou.jpg', 'images/satelites.jpg']
     },
     vandenberg: {
         tag:  'California, EUA · 1957',
         title: 'Base de la Fuerza Espacial Vandenberg',
         hero:  'images/Vandenberg.jpg',
-        desc:  'La Base de la Fuerza Espacial Vandenberg es la principal instalación de EUA para lanzamientos hacia órbitas polares y heliosíncronas. Su posición en la costa del Pacífico es ideal para satélites de vigilancia, reconocimiento y meteorología.',
+        desc:  'La Base de la Fuerza Espacial Vandenberg es la principal instalación de EUA para lanzamientos hacia órbitas polares y heliosíncronas. Su posición en la costa del Pacífico es [...]',
         facts: [
             { label: 'Fundado',        value: '1957' },
             { label: 'País',          value: 'Estados Unidos' },
@@ -337,7 +337,7 @@ const infoData = {
         tag:  'Alemania · 1937',
         title: 'Peenemünde — Cuna de la Era Espacial',
         hero:  'images/Peenemünde.jpg',
-        desc:  'Peenemünde fue el centro secreto de investigación de cohetes del Tercer Reich durante la Segunda Guerra Mundial. Aquí Wernher von Braun y su equipo desarrollaron el cohete V-2 (A-4), el primer objeto en alcanzar el espacio. Su tecnología sentó las bases del programa espacial soviético y estadounidense.',
+        desc:  'Peenemünde fue el centro secreto de investigación de cohetes del Tercer Reich durante la Segunda Guerra Mundial. Aquí Wernher von Braun y su equipo desarrollaron el cohete V-2 [...]',
         facts: [
             { label: 'Activo',              value: '1937 – 1945' },
             { label: 'País',               value: 'Alemania' },
@@ -351,7 +351,7 @@ const infoData = {
         tag:  'Australia · 1947',
         title: 'Woomera — El Cosmódromo del Sur',
         hero:  'images/woomera.jpg',
-        desc:  'El Rango de Pruebas de Woomera fue establecido en 1947 como instalación conjunta australo-británica. En 1967 se lanzó el WRESAT, convirtiendo a Australia en el tercer país en lanzar su propio satélite. Hoy sigue activo para pruebas hipersónicas y experimentos comerciales.',
+        desc:  'El Rango de Pruebas de Woomera fue establecido en 1947 como instalación conjunta australo-británica. En 1967 se lanzó el WRESAT, convirtiendo a Australia en el tercer país en [...]',
         facts: [
             { label: 'Fundado',                   value: '1947' },
             { label: 'País',                      value: 'Australia' },
@@ -365,7 +365,7 @@ const infoData = {
         tag:  'Propulsión espacial',
         title: 'Cohetes — El Puente al Universo',
         hero:  'images/cohetes.jpg',
-        desc:  'Los cohetes son el único medio para superar la gravedad terrestre. Funcionan por el principio de acción y reacción. Los cohetes V-2 derivaron en los grandes vehículos de la era espacial: Saturn V, R-7 soviético, y hoy el Falcon 9 de SpaceX o el SLS de la NASA.',
+        desc:  'Los cohetes son el único medio para superar la gravedad terrestre. Funcionan por el principio de acción y reacción. Los cohetes V-2 derivaron en los grandes vehículos de la er[...]',
         facts: [
             { label: 'Principio',                       value: 'Tercera Ley de Newton (acción-reacción)' },
             { label: 'Cohete más potente en la historia', value: 'Saturn V — 34 MN de empuje' },
@@ -379,7 +379,7 @@ const infoData = {
         tag:  'Órbita terrestre',
         title: 'Satélites — Ojos en el Cielo',
         hero:  'images/satelites.jpg',
-        desc:  'Un satélite artificial es cualquier objeto colocado en órbita. El Sputnik 1 (1957) fue el primero. Hoy más de 7,500 satélites orbitan la Tierra cubriendo telecomunicaciones, GPS, meteorología y ciencia. Los geoestacionarios (35,786 km) son ideales para TV; los LEO como Starlink orbitan entre 200 y 2,000 km.',
+        desc:  'Un satélite artificial es cualquier objeto colocado en órbita. El Sputnik 1 (1957) fue el primero. Hoy más de 7,500 satélites orbitan la Tierra cubriendo telecomunicaciones, G[...]',
         facts: [
             { label: 'Primer satélite',         value: 'Sputnik 1 — 4 oct. 1957 (URSS)' },
             { label: 'Satélites activos hoy',   value: '+7,500 (aprox.)' },
@@ -393,7 +393,7 @@ const infoData = {
         tag:  'Hábitat orbital',
         title: 'Estaciones Espaciales — Hogar en Órbita',
         hero:  'images/estacion espacial.jpg',
-        desc:  'Las estaciones espaciales son laboratorios orbitales para vivir y trabajar en el espacio durante meses. La primera fue el Salyut 1 soviético (1971). Le siguieron Skylab (1973), Mir (1986-2001) y la ISS, ensamblada entre 1998 y 2011 con 15 países participantes.',
+        desc:  'Las estaciones espaciales son laboratorios orbitales para vivir y trabajar en el espacio durante meses. La primera fue el Salyut 1 soviético (1971). Le siguieron Skylab (1973), M[...]',
         facts: [
             { label: 'Primera estación',     value: 'Salyut 1 — URSS, 1971' },
             { label: 'ISS en órbita desde',  value: '1998 (habitada desde 2000)' },
@@ -407,7 +407,7 @@ const infoData = {
         tag:  'Equipo personal',
         title: 'Trajes Espaciales — Armadura del Astronauta',
         hero:  'images/traje.jpg',
-        desc:  'El traje espacial es una nave personal: provee presión, oxígeno, control térmico, comunicaciones y protección contra radiación. Los trajes EVA actuales —EMU de la ISS o el xEMU de Artemis— pesan más de 130 kg en Tierra y permiten hasta 8 horas de trabajo exterior.',
+        desc:  'El traje espacial es una nave personal: provee presión, oxígeno, control térmico, comunicaciones y protección contra radiación. Los trajes EVA actuales —EMU de la ISS o el [...]',
         facts: [
             { label: 'Primer traje espacial', value: 'Sokol SK-1 — Gagarin, 1961' },
             { label: 'Traje EVA actual ISS',  value: 'EMU (Extravehicular Mobility Unit)' },
@@ -421,7 +421,7 @@ const infoData = {
         tag:  'Historia de la exploración espacial',
         title: 'De la Tierra a las Estrellas',
         hero:  "images/Australia's First Satellites 1.jpg",
-        desc:  'La exploración espacial comenzó en 1957 con el Sputnik 1. En 1961 Gagarin llegó al espacio; en 1969 Armstrong pisó la Luna. Las siguientes décadas trajeron estaciones permanentes, sondas a los confines del sistema solar y el telescopio Hubble. Hoy Artemis busca regresar a la Luna y Marte se perfila como el siguiente destino.',
+        desc:  'La exploración espacial comenzó en 1957 con el Sputnik 1. En 1961 Gagarin llegó al espacio; en 1969 Armstrong pisó la Luna. Las siguientes décadas trajeron estaciones permane[...]',
         facts: [
             { label: 'Era 1 — Inicio',        value: 'Sputnik 1 — 4 oct. 1957' },
             { label: 'Era 2 — Primer humano', value: 'Yuri Gagarin — 12 abr. 1961' },
@@ -435,7 +435,7 @@ const infoData = {
         tag:  'Misiones Destacadas',
         title: 'Misiones que Cambiaron la Historia',
         hero:  'images/capsulamercury.jpg',
-        desc:  'A lo largo de la era espacial, ciertas misiones marcaron hitos fundamentales: los acoplamientos Soyuz 4 y 5 demostraron transferencia de tripulantes; el Apollo 15 exploró la Luna con el primer rover; Perseverance busca vida en Marte; JUICE estudia las lunas de Júpiter; y Artemis II prepara el regreso humano a la Luna.',
+        desc:  'A lo largo de la era espacial, ciertas misiones marcaron hitos fundamentales: los acoplamientos Soyuz 4 y 5 demostraron transferencia de tripulantes; el Apollo 15 exploró la Luna[...]',
         facts: [
             { label: 'Soyuz 4 & 5',  value: '1969 — primer acoplamiento tripulado' },
             { label: 'Apollo 15',    value: '1971 — primer rover lunar' },
@@ -449,7 +449,7 @@ const infoData = {
         tag:  'Exploración Lunar y Orbital',
         title: 'La Luna y Más Allá',
         hero:  'images/lunar exploracion.jpg',
-        desc:  'La exploración lunar ha sido el corazón de la era espacial. El programa Apollo culminó con 12 astronautas en la Luna entre 1969 y 1972. Los acoplamientos Soyuz perfeccionaron la tecnología orbital. Mars Base Camp es el concepto actual para una estación en órbita marciana como puerta a la superficie de Marte.',
+        desc:  'La exploración lunar ha sido el corazón de la era espacial. El programa Apollo culminó con 12 astronautas en la Luna entre 1969 y 1972. Los acoplamientos Soyuz perfeccionaron l[...]',
         facts: [
             { label: 'Apollo 15',        value: '1971 — primer rover y EVA de regreso' },
             { label: 'Soviet LOK & LK',  value: 'Años 60s — programa lunar soviético secreto' },
