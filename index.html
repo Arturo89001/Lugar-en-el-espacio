@@ -225,7 +225,7 @@
                             </div>
                             <div class="center-item">
                                 <div class="img-zoom-wrap" onclick="openInfoModal('kourou')">
-                                    <img src="images/kourou.jpg" alt="Kourou" class="center-image">
+                                    <img src="images/Kourou.jpg" alt="Kourou" class="center-image">
                                     <span class="img-zoom-icon">🔍</span>
                                 </div>
                                 <div class="center-text">
@@ -400,7 +400,7 @@
                 <div class="centre-item reveal">
                     <div class="centre-num">03</div>
                     <div class="img-zoom-wrap img-zoom-wrap--centre" onclick="openInfoModal('kourou')">
-                        <img src="images/kourou.jpg" alt="Kourou" class="centre-thumb">
+                        <img src="images/Kourou.jpg" alt="Kourou" class="centre-thumb">
                         <span class="img-zoom-icon">🔍</span>
                     </div>
                     <div class="centre-info">
@@ -752,7 +752,7 @@
                     </div>
 
                     <div class="gallery-item" data-cat="estaciones-satelites">
-                        <img src="images/skylab.jpg" alt="Skylab" class="gi-image">
+                        <img src="images/Skylab.jpg" alt="Skylab" class="gi-image">
                         <div class="gi-overlay">
                             <h5>Skylab</h5>
                             <p>Ralph Aeschliman</p>
@@ -896,7 +896,7 @@
                         Última actualización: Abril 2026
                     </p>
                     <div class="contact-links">
-                        <a href="trabajosartu7@gmail.com" class="contact-link">
+                        <a href="mailto:trabajosartu7@gmail.com" class="contact-link">
                             <span class="cl-icon">📧</span>
                             trabajosartu7@gmail.com
                         </a>
@@ -1009,53 +1009,32 @@
             }
         ];
 
-        var _lbIndex = 0;
-
         function openLightbox(index) {
-            _lbIndex = index;
-            var d = _lbData[index];
-            document.getElementById('lightbox-img').src   = d.src;
-            document.getElementById('lightbox-img').alt   = d.title;
-            document.getElementById('lightbox-label').textContent = d.label;
-            document.getElementById('lightbox-title').textContent = d.title;
-            document.getElementById('lightbox-text').textContent  = d.text;
-            document.getElementById('lightbox').classList.add('open');
-            document.body.style.overflow = 'hidden';
+            const lb = document.getElementById('lightbox');
+            const data = _lbData[index];
+            document.getElementById('lightbox-img').src = data.src;
+            document.getElementById('lightbox-label').textContent = data.label;
+            document.getElementById('lightbox-title').textContent = data.title;
+            document.getElementById('lightbox-text').textContent = data.text;
+            lb.style.display = 'flex';
         }
 
         function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('open');
-            document.body.style.overflow = '';
+            document.getElementById('lightbox').style.display = 'none';
         }
 
         function lightboxNav(dir, e) {
-            if (e) e.stopPropagation();
-            _lbIndex = (_lbIndex + dir + _lbData.length) % _lbData.length;
-            var d   = _lbData[_lbIndex];
-            var img = document.getElementById('lightbox-img');
-            img.style.opacity = '0';
-            setTimeout(function() {
-                img.src = d.src;
-                img.alt = d.title;
-                img.style.opacity = '1';
-            }, 150);
-            document.getElementById('lightbox-label').textContent = d.label;
-            document.getElementById('lightbox-title').textContent = d.title;
-            document.getElementById('lightbox-text').textContent  = d.text;
+            e.stopPropagation();
+            const img = document.getElementById('lightbox-img').src;
+            const currentIndex = _lbData.findIndex(d => d.src === img);
+            let newIndex = currentIndex + dir;
+            if (newIndex < 0) newIndex = _lbData.length - 1;
+            if (newIndex >= _lbData.length) newIndex = 0;
+            openLightbox(newIndex);
         }
 
-        // Cerrar al hacer clic en el fondo oscuro
-        document.getElementById('lightbox').addEventListener('click', function(e) {
-            if (e.target === this) closeLightbox();
-        });
-
-        // Teclado
-        document.addEventListener('keydown', function(e) {
-            if (!document.getElementById('lightbox').classList.contains('open')) return;
-            if (e.key === 'Escape')     closeLightbox();
-            if (e.key === 'ArrowRight') lightboxNav(1);
-            if (e.key === 'ArrowLeft')  lightboxNav(-1);
-        });
+        document.getElementById('lightbox').addEventListener('click', closeLightbox);
+        document.querySelector('.lightbox-inner').addEventListener('click', e => e.stopPropagation());
     </script>
 </body>
 
