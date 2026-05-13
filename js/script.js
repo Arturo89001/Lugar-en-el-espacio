@@ -286,7 +286,7 @@ const infoData = {
     kourou: {
         tag:   'Guayana Francesa · 1968',
         title: 'Centro Espacial de Kourou',
-        hero:  'images/kourou.jpg',
+        hero:  'images/Kourou.jpg',
         desc:  'El Centro Espacial de Kourou, también conocido como Puerto Espacial Europeo, es operado por la Agencia Espacial Europea (ESA) y el CNES francés. Su ubicación a apenas 5° al norte del ecuador le otorga una ventaja gravitacional excepcional para lanzar satélites geoestacionarios, reduciendo el combustible necesario respecto a otros centros. Es el principal puerto de lanzamiento del cohete Ariane, que ha puesto en órbita cientos de satélites comerciales y científicos desde la década de 1970.',
         facts: [
             { label: 'Fundado',               value: '1968' },
@@ -379,7 +379,7 @@ const infoData = {
             { label: 'Velocidad ISS',         value: '7.7 km/s (17,500 mph)' },
             { label: 'Países participantes',  value: '15 naciones' },
         ],
-        images: ['images/estacion_espacial.jpg', 'images/skylab.jpg', 'images/salyut-7.jpg', 'images/buran-mir.jpg', 'images/Salyut_1_with_Soyuz_11_model.jpg']
+        images: ['images/estacion_espacial.jpg', 'images/Skylab.jpg', 'images/salyut-7.jpg', 'images/buran-mir.jpg', 'images/Salyut_1_with_Soyuz_11_model.jpg']
     },
     traje: {
         tag:   'Equipo personal',
