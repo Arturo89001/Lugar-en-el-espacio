@@ -295,7 +295,7 @@ const infoData = {
             { label: 'Cohetes principales',   value: 'Ariane 5, Ariane 6, Vega' },
             { label: 'Lanzamientos totales',  value: '300+' },
         ],
-        images: ['images/kourou.jpg', 'images/satelites.jpg']
+        images: ['images/Kourou.jpg', 'images/satelites.jpg']
     },
     vandenberg: {
         tag:   'California, EUA · 1957',
