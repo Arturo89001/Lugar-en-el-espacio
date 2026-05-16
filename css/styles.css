@@ -46,7 +46,7 @@ body.light-mode {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
+    font-size: 1.55rem;
     transition: background 0.3s, border-color 0.3s, transform 0.2s, box-shadow 0.3s;
     box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
@@ -135,7 +135,7 @@ nav.scrolled {
 .nav-logo {
     font-family: 'Orbitron', monospace;
     font-weight: 900;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     letter-spacing: 0.15em;
     color: var(--accent-bright);
     text-shadow: 0 0 20px var(--accent-bright);
@@ -146,7 +146,7 @@ nav.scrolled {
 }
 
 .nav-logo .logo-icon {
-    font-size: 1.4rem;
+    font-size: 1.55rem;
 }
 
 .nav-menu {
@@ -166,11 +166,7 @@ nav.scrolled {
     color: var(--star-dim);
     text-decoration: none;
     font-family: 'Orbitron', monospace;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border: 1px solid transparent;
+    font-size: 0.82rem;
     border-radius: 4px;
     transition: all 0.25s;
 }
@@ -214,7 +210,7 @@ nav.scrolled {
     color: var(--star-dim);
     text-decoration: none;
     font-family: 'Exo 2', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 400;
     letter-spacing: 0.05em;
     transition: all 0.2s;
@@ -231,7 +227,7 @@ nav.scrolled {
 .dropdown .sub-header {
     padding: 6px 20px 2px;
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     color: rgba(79, 195, 247, 0.4);
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -323,7 +319,7 @@ section {
 
 .hero-badge {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.92rem;
     letter-spacing: 0.3em;
     color: var(--accent);
     text-transform: uppercase;
@@ -334,7 +330,7 @@ section {
 
 .hero-title {
     font-family: 'Orbitron', monospace;
-    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-size: clamp(3rem, 7.5vw, 6.2rem);
     font-weight: 900;
     line-height: 1.05;
     letter-spacing: 0.06em;
@@ -350,7 +346,7 @@ section {
 }
 
 .hero-sub {
-    font-size: 1rem;
+    font-size: 1.15rem;
     color: var(--star-dim);
     max-width: 560px;
     line-height: 1.7;
@@ -376,7 +372,7 @@ section {
     border: 1.5px solid var(--accent-bright);
     color: var(--accent-bright);
     font-family: 'Orbitron', monospace;
-    font-size: 0.65rem;
+    font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -388,21 +384,9 @@ section {
     overflow: hidden;
 }
 
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--accent-bright);
-    transform: translateX(-101%);
-    transition: transform 0.3s;
-}
-
-.btn-primary:hover::before {
-    transform: translateX(0);
-}
-
 .btn-primary:hover {
-    color: var(--void);
+    background: rgba(0, 229, 255, 0.08);
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.2);
 }
 
 .btn-secondary {
@@ -411,7 +395,7 @@ section {
     border: 1.5px solid rgba(79, 195, 247, 0.3);
     color: var(--star-dim);
     font-family: 'Orbitron', monospace;
-    font-size: 0.65rem;
+    font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -432,7 +416,7 @@ section {
     left: 50%;
     transform: translateX(-50%);
     font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
+    font-size: 1.0rem;
     color: rgba(122, 144, 192, 0.5);
     letter-spacing: 0.05em;
     white-space: nowrap;
@@ -459,7 +443,7 @@ section {
 
 .scroll-indicator span {
     font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
+    font-size: 0.92rem;
     letter-spacing: 0.2em;
     color: rgba(79, 195, 247, 0.4);
     text-transform: uppercase;
@@ -540,7 +524,7 @@ section {
 
 .card-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.58rem;
+    font-size: 0.92rem;
     letter-spacing: 0.2em;
     color: var(--accent);
     text-transform: uppercase;
@@ -549,7 +533,7 @@ section {
 
 .card-title {
     font-family: 'Orbitron', monospace;
-    font-size: 0.8rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--star-white);
     margin-bottom: 8px;
@@ -557,7 +541,7 @@ section {
 }
 
 .card-text {
-    font-size: 0.78rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
     line-height: 1.6;
 }
@@ -571,7 +555,7 @@ section {
 
 .section-tag {
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.92rem;
     letter-spacing: 0.3em;
     color: var(--accent);
     text-transform: uppercase;
@@ -590,7 +574,7 @@ section {
 
 .section-title {
     font-family: 'Orbitron', monospace;
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-size: clamp(1.9rem, 3.2vw, 2.8rem);
     font-weight: 800;
     color: var(--star-white);
     margin-bottom: 16px;
@@ -602,7 +586,7 @@ section {
 }
 
 .section-lead {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     color: var(--star-dim);
     line-height: 1.8;
     max-width: 680px;
@@ -640,7 +624,7 @@ section {
 
 .info-section-header {
     font-family: 'Orbitron', monospace;
-    font-size: 0.75rem;
+    font-size: 0.92rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--accent);
@@ -679,14 +663,14 @@ section {
 }
 
 .info-icon {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 16px;
     display: block;
 }
 
 .info-card h3 {
     font-family: 'Orbitron', monospace;
-    font-size: 0.85rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--accent);
     margin-bottom: 12px;
@@ -694,7 +678,7 @@ section {
 }
 
 .info-card p {
-    font-size: 0.82rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
     line-height: 1.7;
     text-align: justify;
@@ -706,7 +690,7 @@ section {
 }
 
 .info-card ul li {
-    font-size: 0.8rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
     padding: 5px 0;
     border-bottom: 1px solid rgba(79, 195, 247, 0.07);
@@ -718,7 +702,7 @@ section {
 .info-card ul li::before {
     content: '▸';
     color: var(--accent);
-    font-size: 0.65rem;
+    font-size: 0.92rem;
 }
 
 /* ── CENTROS ESPACIALES ── */
@@ -759,13 +743,13 @@ section {
 
 .center-item h4 {
     font-family: 'Orbitron', monospace;
-    font-size: 1rem;
+    font-size: 1.15rem;
     color: var(--accent);
     margin-bottom: 8px;
 }
 
 .center-item p {
-    font-size: 0.85rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
     line-height: 1.6;
     margin: 0;
@@ -815,13 +799,13 @@ section {
 
 .tech-item h4 {
     font-family: 'Orbitron', monospace;
-    font-size: 0.9rem;
+    font-size: 1.15rem;
     color: var(--accent);
     margin-bottom: 8px;
 }
 
 .tech-item p {
-    font-size: 0.8rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
     line-height: 1.5;
     margin: 4px 0;
@@ -845,7 +829,7 @@ section {
     border: 1px solid rgba(79, 195, 247, 0.2);
     color: var(--star-dim);
     font-family: 'Orbitron', monospace;
-    font-size: 0.6rem;
+    font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -880,14 +864,14 @@ section {
 
 .mission-text h3 {
     font-family: 'Orbitron', monospace;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--star-white);
     margin-bottom: 16px;
 }
 
 .mission-text p {
-    font-size: 0.85rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
     line-height: 1.8;
     margin-bottom: 14px;
@@ -899,7 +883,7 @@ section {
 
 .mission-item h4 {
     font-family: 'Orbitron', monospace;
-    font-size: 0.9rem;
+    font-size: 1.15rem;
     font-weight: 600;
     margin-bottom: 8px;
 }
@@ -912,7 +896,7 @@ section {
 .mission-item em {
     font-style: italic;
     color: var(--star-dim);
-    font-size: 0.75rem;
+    font-size: 0.92rem;
 }
 
 .mission-meta {
@@ -928,7 +912,7 @@ section {
     border: 1px solid rgba(79, 195, 247, 0.2);
     border-radius: 3px;
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.82rem;
     color: var(--accent);
     letter-spacing: 0.1em;
 }
@@ -979,7 +963,7 @@ section {
 
 .mission-visual h4 {
     font-family: 'Orbitron', monospace;
-    font-size: 0.9rem;
+    font-size: 1.15rem;
     color: var(--accent-bright);
     margin-bottom: 8px;
     position: relative;
@@ -987,7 +971,7 @@ section {
 }
 
 .mission-visual p {
-    font-size: 0.75rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
     position: relative;
     z-index: 1;
@@ -1024,7 +1008,7 @@ section {
 
 .centre-num {
     font-family: 'Orbitron', monospace;
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     font-weight: 900;
     color: rgba(79, 195, 247, 0.15);
     line-height: 1;
@@ -1038,7 +1022,7 @@ section {
 
 .centre-info h4 {
     font-family: 'Orbitron', monospace;
-    font-size: 0.8rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--star-white);
     margin-bottom: 6px;
@@ -1046,14 +1030,14 @@ section {
 
 .centre-info .loc {
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.92rem;
     color: var(--accent);
     letter-spacing: 0.1em;
     margin-bottom: 8px;
 }
 
 .centre-info p {
-    font-size: 0.78rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
     line-height: 1.6;
     text-align: justify;
@@ -1077,7 +1061,7 @@ section {
     border: 1px solid rgba(79, 195, 247, 0.2);
     color: var(--star-dim);
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.82rem;
     letter-spacing: 0.1em;
     cursor: pointer;
     border-radius: 3px;
@@ -1207,13 +1191,13 @@ section {
 
 .gi-overlay h5 {
     font-family: 'Orbitron', monospace;
-    font-size: 0.65rem;
+    font-size: 0.92rem;
     color: var(--accent-bright);
     margin-bottom: 4px;
 }
 
 .gi-overlay p {
-    font-size: 0.65rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
 }
 
@@ -1230,7 +1214,7 @@ section {
 }
 
 .contact-info p {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
     line-height: 1.8;
     margin-bottom: 30px;
@@ -1253,7 +1237,7 @@ section {
     color: var(--star-dim);
     text-decoration: none;
     transition: all 0.3s;
-    font-size: 0.82rem;
+    font-size: 0.97rem;
 }
 
 .contact-link:hover {
@@ -1263,7 +1247,7 @@ section {
 }
 
 .contact-link .cl-icon {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 }
 
 .contact-form {
@@ -1280,7 +1264,7 @@ section {
 
 .form-group label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.92rem;
     letter-spacing: 0.15em;
     color: var(--accent);
     text-transform: uppercase;
@@ -1295,7 +1279,7 @@ section {
     padding: 12px 16px;
     color: var(--star-white);
     font-family: 'Exo 2', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.92rem;
     outline: none;
     transition: border-color 0.25s;
     resize: vertical;
@@ -1325,14 +1309,14 @@ footer {
 .footer-logo {
     font-family: 'Orbitron', monospace;
     font-weight: 900;
-    font-size: 1rem;
+    font-size: 1.05rem;
     letter-spacing: 0.2em;
     color: rgba(0, 229, 255, 0.3);
     margin-bottom: 12px;
 }
 
 .footer-text {
-    font-size: 0.75rem;
+    font-size: 0.92rem;
     color: rgba(122, 144, 192, 0.4);
     line-height: 1.6;
 }
@@ -1340,7 +1324,7 @@ footer {
 .footer-dedication {
     margin-top: 16px;
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.92rem;
     color: rgba(79, 195, 247, 0.3);
     letter-spacing: 0.05em;
 }
@@ -1414,7 +1398,7 @@ footer {
 
 .timeline-year {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.92rem;
     color: var(--accent);
     letter-spacing: 0.1em;
     margin-bottom: 4px;
@@ -1422,13 +1406,13 @@ footer {
 
 .timeline-item h4 {
     font-family: 'Orbitron', monospace;
-    font-size: 0.78rem;
+    font-size: 1.15rem;
     color: var(--star-white);
     margin-bottom: 6px;
 }
 
 .timeline-item p {
-    font-size: 0.78rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
     line-height: 1.6;
 }
@@ -1545,7 +1529,7 @@ footer {
 
 .lightbox-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.92rem;
     letter-spacing: 0.25em;
     color: var(--accent);
     text-transform: uppercase;
@@ -1554,14 +1538,14 @@ footer {
 
 .lightbox-title {
     font-family: 'Orbitron', monospace;
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--star-white);
     margin-bottom: 8px;
 }
 
 .lightbox-text {
-    font-size: 0.82rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
     line-height: 1.7;
     max-width: 560px;
@@ -1575,7 +1559,7 @@ footer {
     background: transparent;
     border: 1px solid rgba(79, 195, 247, 0.3);
     color: var(--star-dim);
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -1602,7 +1586,7 @@ footer {
     background: rgba(13, 21, 48, 0.8);
     border: 1px solid rgba(79, 195, 247, 0.25);
     color: var(--accent);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -1629,7 +1613,7 @@ footer {
     top: 10px;
     right: 10px;
     z-index: 2;
-    font-size: 1rem;
+    font-size: 1.15rem;
     opacity: 0;
     transition: opacity 0.25s;
     background: rgba(3, 4, 10, 0.7);
@@ -1654,7 +1638,7 @@ footer {
 @media (max-width: 768px) {
     .lightbox-prev { left: 8px; }
     .lightbox-next { right: 8px; }
-    .lightbox-title { font-size: 0.8rem; }
+    .lightbox-title { font-size: 1.15rem; }
 }
 
 /* ════════════════════════════════════════
@@ -1742,7 +1726,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 1.55rem;
     opacity: 0;
     transition: opacity 0.25s;
     pointer-events: none;
@@ -1807,7 +1791,7 @@ footer {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    font-size: 1.3rem;
+    font-size: 1.45rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1847,7 +1831,7 @@ footer {
 
 .im-tag {
     font-family: 'Orbitron', monospace;
-    font-size: 0.65rem;
+    font-size: 0.92rem;
     color: var(--accent);
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -1856,7 +1840,7 @@ footer {
 
 .im-title {
     font-family: 'Orbitron', monospace;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--star-white);
     margin: 0;
@@ -1868,7 +1852,7 @@ footer {
 }
 
 .im-desc {
-    font-size: 0.85rem;
+    font-size: 0.92rem;
     color: var(--star-dim);
     line-height: 1.8;
     margin-bottom: 24px;
@@ -1894,7 +1878,7 @@ footer {
 }
 
 .im-fact-label {
-    font-size: 0.62rem;
+    font-size: 0.92rem;
     font-family: 'Orbitron', monospace;
     color: var(--accent);
     text-transform: uppercase;
@@ -1902,7 +1886,7 @@ footer {
 }
 
 .im-fact-value {
-    font-size: 0.78rem;
+    font-size: 0.92rem;
     color: var(--star-white);
     line-height: 1.4;
 }
@@ -1943,7 +1927,7 @@ footer {
 @media (max-width: 600px) {
     .im-facts              { grid-template-columns: 1fr; }
     .im-hero               { height: 180px; }
-    .im-title              { font-size: 0.85rem; }
+    .im-title              { font-size: 1.15rem; }
     .im-body               { padding: 16px; }
     .img-zoom-wrap--centre { width: 60px; height: 60px; }
     .centre-thumb          { width: 60px; height: 60px; }

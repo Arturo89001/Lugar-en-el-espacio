@@ -148,11 +148,55 @@ function handleForm(e) {
     })
     .then(res => {
         if (res.ok) {
-            btn.textContent       = '✓ Mensaje Enviado';
-            btn.style.borderColor = '#4caf50';
-            btn.style.color       = '#4caf50';
-            btn.style.opacity     = '1';
-            form.reset();
+            form.style.transition = 'opacity 0.4s';
+            form.style.opacity    = '0';
+            setTimeout(() => {
+                form.style.display = 'none';
+                const thanks = document.createElement('div');
+                thanks.id        = 'thanksMsg';
+                thanks.innerHTML = `
+                    <div style="
+                        display:flex; flex-direction:column; align-items:center;
+                        justify-content:center; gap:18px; padding:48px 32px;
+                        border:1px solid rgba(79,195,247,0.2); border-radius:12px;
+                        background:rgba(13,21,48,0.6); text-align:center;
+                        animation: fade-up 0.6s forwards;
+                    ">
+                        <span style="font-size:2.5rem">🚀</span>
+                        <h3 style="font-family:'Orbitron',monospace; font-size:1.05rem;
+                            color:var(--accent-bright); letter-spacing:0.08em;">
+                            ¡Mensaje recibido!
+                        </h3>
+                        <p style="font-size:0.92rem; color:var(--star-dim);
+                            line-height:1.7; max-width:340px;">
+                            Gracias por tu comentario. Lo leeremos con gusto y te responderemos pronto.
+                        </p>
+                        <p style="font-family:'Space Mono',monospace; font-size:0.75rem;
+                            color:rgba(79,195,247,0.5); letter-spacing:0.1em;">
+                            — Arturo, David & Mario
+                        </p>
+                    </div>`;
+                form.parentNode.appendChild(thanks);
+
+                // Después de 5s, quitar el mensaje y restaurar el form
+                setTimeout(() => {
+                    thanks.style.transition = 'opacity 0.4s';
+                    thanks.style.opacity    = '0';
+                    setTimeout(() => {
+                        thanks.remove();
+                        form.reset();
+                        form.style.display  = 'flex';
+                        form.style.opacity  = '0';
+                        setTimeout(() => { form.style.opacity = '1'; }, 20);
+                        const btn = document.getElementById('submitBtn');
+                        btn.textContent      = 'Enviar Mensaje';
+                        btn.style.borderColor = '';
+                        btn.style.color       = '';
+                        btn.style.opacity     = '1';
+                        btn.disabled          = false;
+                    }, 400);
+                }, 5000);
+            }, 400);
         } else { throw new Error('server error'); }
     })
     .catch(() => {
@@ -161,8 +205,6 @@ function handleForm(e) {
         btn.style.color       = '#ff5252';
         btn.style.opacity     = '1';
         btn.disabled          = false;
-    })
-    .finally(() => {
         setTimeout(() => {
             btn.textContent       = 'Enviar Mensaje';
             btn.style.borderColor = '';
@@ -199,6 +241,7 @@ window.openLightbox = function(index) {
     document.getElementById('lightbox-text').textContent  = d.text;
     lb.classList.add('open');
     document.body.style.overflow = 'hidden';
+    updateLightboxArrows(featuredData);
 };
 
 window.closeLightbox = function() {
@@ -208,11 +251,21 @@ window.closeLightbox = function() {
     galleryLbData   = [];
 };
 
+function updateLightboxArrows(dataset) {
+    const prev = document.querySelector('.lightbox-prev');
+    const next = document.querySelector('.lightbox-next');
+    if (!prev || !next) return;
+    prev.style.opacity = lbIndex <= 0 ? '0.2' : '1';
+    next.style.opacity = lbIndex >= dataset.length - 1 ? '0.2' : '1';
+}
+
 window.lightboxNav = function(dir, e) {
     if (e) e.stopPropagation();
     const dataset = (galleryLbActive && galleryLbData.length) ? galleryLbData : featuredData;
     if (!dataset.length) return;
-    lbIndex = (lbIndex + dir + dataset.length) % dataset.length;
+    const newIndex = lbIndex + dir;
+    if (newIndex < 0 || newIndex >= dataset.length) return;
+    lbIndex = newIndex;
     const d   = dataset[lbIndex];
     const img = document.getElementById('lightbox-img');
     img.style.opacity = '0';
@@ -220,6 +273,7 @@ window.lightboxNav = function(dir, e) {
     document.getElementById('lightbox-label').textContent = d.label;
     document.getElementById('lightbox-title').textContent = d.title;
     document.getElementById('lightbox-text').textContent  = d.text;
+    updateLightboxArrows(dataset);
 };
 
 window.openGalleryLightbox = function(clickedItem) {
@@ -251,6 +305,7 @@ window.openGalleryLightbox = function(clickedItem) {
     document.getElementById('lightbox-text').textContent  = d.text;
     lb.classList.add('open');
     document.body.style.overflow = 'hidden';
+    updateLightboxArrows(galleryLbData);
 };
 
 // ── INFO MODAL DATA ──
@@ -452,8 +507,8 @@ window.openInfoModal = function(key) {
     ).join('');
     const galleryEl = document.getElementById('im-gallery');
     if (d.images && d.images.length > 1) {
-        galleryEl.innerHTML     = d.images.map(src =>
-            `<img src="${src}" alt="" class="im-gal-img" onclick="this.classList.toggle('im-gal-zoom')">`
+        galleryEl.innerHTML = d.images.map((src, i) =>
+            `<img src="${src}" alt="" class="im-gal-img" onclick="openModalImageLightbox(${i})">`
         ).join('');
         galleryEl.style.display = 'grid';
     } else {
@@ -467,6 +522,35 @@ window.openInfoModal = function(key) {
 window.closeInfoModal = function() {
     document.getElementById('infoModal').classList.remove('open');
     document.body.style.overflow = '';
+};
+
+// Abre el lightbox principal desde las miniaturas del info modal
+let modalImgData = [];
+window.openModalImageLightbox = function(index) {
+    // Construir dataset desde las imágenes actuales del modal
+    const imgs = document.querySelectorAll('#im-gallery .im-gal-img');
+    modalImgData = Array.from(imgs).map(img => ({
+        src:   img.src,
+        title: document.getElementById('im-title').textContent,
+        label: document.getElementById('im-tag').textContent,
+        text:  ''
+    }));
+    galleryLbActive = true;
+    galleryLbData   = modalImgData;
+    lbIndex         = index;
+    const d   = galleryLbData[lbIndex];
+    const lb  = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src   = d.src;
+    img.alt   = d.title;
+    document.getElementById('lightbox-label').textContent = d.label;
+    document.getElementById('lightbox-title').textContent = d.title;
+    document.getElementById('lightbox-text').textContent  = d.text;
+    // Cerrar el info modal y abrir el lightbox encima
+    document.getElementById('infoModal').classList.remove('open');
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    updateLightboxArrows(galleryLbData);
 };
 
 // ── DOM READY ──
